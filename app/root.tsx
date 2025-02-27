@@ -42,11 +42,16 @@ export default function App() {
         </Link>
 
         <div className="dropdown dropdown-end sm:hidden">
-          <button className="btn btn-ghost" type="button">
+          {/* biome-ignore lint/a11y/useSemanticElements: fix mobile menu */}
+          <div tabIndex={0} role="button" className="btn btn-ghost">
             <FaBars />
-          </button>
+          </div>
 
-          <ul className="dropdown-content menu z-[1] w-56 gap-2 rounded-box bg-base-200 p-6 shadow">
+          <ul
+            // biome-ignore lint/a11y/noNoninteractiveTabindex: fix mobile menu
+            tabIndex={0}
+            className="dropdown-content menu z-[1] w-56 gap-2 rounded-box bg-base-200 p-6 shadow"
+          >
             <li>
               <NavLink
                 to="/docs"
