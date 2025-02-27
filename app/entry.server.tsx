@@ -17,28 +17,30 @@ export default function handleRequest(
   _loadContext: AppLoadContext,
 ) {
   return new Promise((resolve, reject) => {
-    // Check for the clockOffset cookie
-    const cookies = request.headers.get('cookie');
-    if (!cookies?.includes('clockOffset')) {
-      const script = `
+    let shellRendered = false;
+    const userAgent = request.headers.get('user-agent');
+
+    if (!isbot(userAgent)) {
+      // Check for the clockOffset cookie
+      const cookies = request.headers.get('cookie');
+      if (!cookies?.includes('clockOffset')) {
+        const script = `
         const offset = new Date().getTimezoneOffset() * -1;
         document.cookie = 'clockOffset=' + offset + '; path=/'; 
         window.location.reload();
       `;
-      responseHeaders.set('Content-Type', 'text/html');
-      responseHeaders.set('Set-Cookie', 'clockOffset=0; path=/');
-      responseHeaders.set('Refresh', `0; url=${request.url}`);
-      resolve(
-        new Response(`<html><body><script>${script}</script></body></html>`, {
-          headers: responseHeaders,
-          status: responseStatusCode,
-        }),
-      );
-      return;
+        responseHeaders.set('Content-Type', 'text/html');
+        responseHeaders.set('Set-Cookie', 'clockOffset=0; path=/');
+        responseHeaders.set('Refresh', `0; url=${request.url}`);
+        resolve(
+          new Response(`<html><body><script>${script}</script></body></html>`, {
+            headers: responseHeaders,
+            status: responseStatusCode,
+          }),
+        );
+        return;
+      }
     }
-
-    let shellRendered = false;
-    const userAgent = request.headers.get('user-agent');
 
     // Ensure requests from bots and SPA Mode renders wait for all content to load before responding
     // https://react.dev/reference/react-dom/server/renderToPipeableStream#waiting-for-all-content-to-load-for-crawlers-and-static-generation
