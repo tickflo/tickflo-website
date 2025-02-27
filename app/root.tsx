@@ -1,6 +1,8 @@
 import {
+  Link,
   Links,
   Meta,
+  NavLink,
   Outlet,
   Scripts,
   ScrollRestoration,
@@ -9,6 +11,7 @@ import {
 
 import type { Route } from './+types/root';
 import './app.css';
+import { FaBars } from 'react-icons/fa';
 
 export const links: Route.LinksFunction = () => [];
 
@@ -31,7 +34,122 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <>
+      <nav className="navbar justify-between bg-base-100 shadow-sm">
+        <Link to="/" className="btn btn-ghost text-lg">
+          Tickflo
+        </Link>
+
+        <div className="dropdown dropdown-end sm:hidden">
+          <button className="btn btn-ghost" type="button">
+            <FaBars />
+          </button>
+
+          <ul className="dropdown-content menu z-[1] w-56 gap-2 rounded-box bg-base-200 p-6 shadow">
+            <li>
+              <NavLink
+                to="/docs"
+                className={({ isActive }) => (isActive ? 'menu-active' : '')}
+              >
+                Docs
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/about"
+                className={({ isActive }) => (isActive ? 'menu-active' : '')}
+              >
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/pricing"
+                className={({ isActive }) => (isActive ? 'menu-active' : '')}
+              >
+                Pricing
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/blog"
+                className={({ isActive }) => (isActive ? 'menu-active' : '')}
+              >
+                Blog
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) => (isActive ? 'menu-active' : '')}
+              >
+                Contact
+              </NavLink>
+            </li>
+            <a
+              className="btn btn-sm btn-primary"
+              href="https://app.tickflo.co/login"
+            >
+              Log in
+            </a>
+          </ul>
+        </div>
+
+        <ul className="menu sm:menu-horizontal hidden gap-2">
+          <li>
+            <NavLink
+              to="/docs"
+              className={({ isActive }) => (isActive ? 'menu-active' : '')}
+            >
+              Docs
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/about"
+              className={({ isActive }) => (isActive ? 'menu-active' : '')}
+            >
+              About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/pricing"
+              className={({ isActive }) => (isActive ? 'menu-active' : '')}
+            >
+              Pricing
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/blog"
+              className={({ isActive }) => (isActive ? 'menu-active' : '')}
+            >
+              Blog
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) => (isActive ? 'menu-active' : '')}
+            >
+              Contact
+            </NavLink>
+          </li>
+          <a
+            className="btn btn-sm btn-primary"
+            href="https://app.tickflo.co/login"
+          >
+            Log in
+          </a>
+        </ul>
+      </nav>
+      <main className="p-4">
+        <Outlet />
+      </main>
+    </>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
