@@ -3,30 +3,10 @@ import { remember } from '@epic-web/remember';
 import frontmatter from 'gray-matter';
 import { Marked } from 'marked';
 import { getHeadingList, gfmHeadingId } from 'marked-gfm-heading-id';
-import { createHighlighter } from 'shiki';
 import { etag } from './etag';
 
-const highlighter = await remember('highlighter', () =>
-  createHighlighter({
-    langs: ['md', 'sh', 'rust', 'text', 'yaml'],
-    themes: ['github-dark-dimmed'],
-  }),
-);
-
 const marked = remember('marked', () =>
-  new Marked()
-    .use({ async: true, gfm: true })
-    .use(gfmHeadingId())
-    .use({
-      renderer: {
-        code(code) {
-          return highlighter.codeToHtml(code.text, {
-            lang: code.lang ?? 'text',
-            theme: 'github-dark-dimmed',
-          });
-        },
-      },
-    }),
+  new Marked().use({ async: true, gfm: true }).use(gfmHeadingId()),
 );
 
 async function parseMarkdown(filepath: string) {
