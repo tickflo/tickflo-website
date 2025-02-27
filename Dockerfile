@@ -18,6 +18,7 @@ RUN npm install -g pnpm
 RUN pnpm install --prod --frozen-lockfile
 
 COPY --from=builder /app/build ./build
+COPY --from=builder /app/content ./content
 
 EXPOSE 3000
 
