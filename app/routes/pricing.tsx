@@ -8,7 +8,7 @@ export function meta() {
   });
 }
 
-export default function about() {
+export default function pricing() {
   return (
     <div className="flex w-full justify-center">
       <div className="prose">
@@ -75,7 +75,7 @@ export default function about() {
           mattis eros. Sed non placerat tortor, ac dictum mauris. Nunc convallis
           dignissim blandit. Integer laoreet dictum dui, sit amet posuere lectus
           commodo sit amet.
-        </p>{' '}
+        </p>
       </div>
     </div>
   );

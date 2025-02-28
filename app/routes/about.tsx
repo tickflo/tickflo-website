@@ -75,7 +75,7 @@ export default function about() {
           mattis eros. Sed non placerat tortor, ac dictum mauris. Nunc convallis
           dignissim blandit. Integer laoreet dictum dui, sit amet posuere lectus
           commodo sit amet.
-        </p>{' '}
+        </p>
       </div>
     </div>
   );
