@@ -14,67 +14,41 @@ export default function about() {
       <div className="prose">
         <h2>About us</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi varius,
-          nibh at interdum blandit, leo est sodales ligula, ac tincidunt enim
-          erat id massa. Phasellus aliquam tellus felis, sit amet commodo ligula
-          laoreet sed. Sed sed vulputate nibh. Sed non velit dapibus, placerat
-          nulla vel, vulputate erat. In consectetur enim nec eleifend sagittis.
-          Etiam ante dui, egestas a urna sit amet, rhoncus condimentum dui.
-          Curabitur vulputate ante risus, id hendrerit felis suscipit sit amet.
-          Proin ipsum turpis, molestie quis nulla sit amet, lobortis suscipit
-          neque. Quisque ex felis, varius sit amet ante sit amet, consequat
-          volutpat nunc. Vivamus molestie viverra felis, non interdum leo
-          tincidunt quis.
+          At Tickflo, we believe that efficient ticket management is the
+          backbone of productivity. That’s why we built an open-source ticketing
+          system that is not only powerful but also flexible, user-friendly, and
+          completely customizable. Whether you're handling customer support,
+          managing internal IT requests, or tracking routine tasks, Tickflo
+          provides a streamlined and intuitive solution tailored to your needs
+        </p>
+        <h2> Our Mission</h2>
+        <p>
+          Our mission is simple: to empower teams with a modern, open-source
+          ticketing system that eliminates bottlenecks, improves communication,
+          and enhances workflow automation. We recognize that every organization
+          has unique processes, which is why Tickflo is designed to be fully
+          adaptable—allowing you to configure it to match your exact
+          requirements without vendor lock-in or excessive costs.
+        </p>
+        <h2>Community-Driven Development</h2>
+        <p>
+          Tickflo is more than just software—it’s a collaborative effort driven
+          by developers, IT professionals, and businesses around the world. As
+          an open-source project, it thrives on contributions, feedback, and
+          shared innovation. Our community works together to ensure Tickflo
+          remains modern, efficient, and secure, providing a reliable solution
+          that evolves with the needs of its users.
+        </p>
+        <h2>Join the Tickflo Community</h2>
+        <p>
+          We’re dedicated to building a better, more accessible support and
+          issue-tracking system—one that puts control back in the hands of its
+          users. Whether you want to contribute code, request new features, or
+          simply find a dependable tool for your team, Tickflo welcomes you.
         </p>
         <p>
-          Vivamus in urna imperdiet, tincidunt leo aliquam, consectetur mi.
-          Proin tincidunt, erat nec gravida sollicitudin, augue lacus convallis
-          ex, eu fermentum velit mauris quis magna. Quisque lobortis augue eu
-          vehicula scelerisque. Ut congue quis lectus id iaculis. Praesent vitae
-          malesuada libero, sit amet aliquam purus. Vestibulum aliquet nulla non
-          purus accumsan, at lobortis ipsum condimentum. Duis cursus ligula
-          tortor, a fermentum justo tristique eu. Cras purus elit, volutpat in
-          nulla id, placerat efficitur sapien. Curabitur ut velit quis nulla
-          pharetra maximus. Donec elit nulla, maximus sed orci dignissim,
-          dignissim lacinia mi. Pellentesque vitae eleifend nunc. Phasellus
-          sollicitudin semper eros id maximus. Aliquam tincidunt, nulla et
-          ornare rutrum, ante est finibus lacus, at facilisis sapien massa ac
-          leo. Aenean sed est et ante vestibulum accumsan ut a urna. Aenean at
-          urna id risus tristique hendrerit sed ut diam.
-        </p>
-        <p>
-          Mauris a scelerisque tortor. Donec id quam ac eros pulvinar cursus
-          bibendum et nisi. Nulla vel fermentum ante. Quisque maximus vulputate
-          risus quis sodales. Maecenas lobortis mi eu bibendum condimentum. Sed
-          condimentum dapibus odio. Phasellus vestibulum dignissim lobortis.
-          Nullam turpis quam, condimentum aliquet malesuada quis, porttitor eget
-          lectus. Fusce tincidunt est id quam venenatis maximus.
-        </p>
-        <p>
-          Integer ornare dolor eu quam fermentum, quis aliquam sapien lacinia.
-          Suspendisse justo lorem, luctus eu magna et, pulvinar aliquam arcu.
-          Sed interdum metus nec ultricies bibendum. Morbi vitae neque ac orci
-          varius feugiat. Aliquam erat volutpat. Quisque sollicitudin placerat
-          est eget molestie. Nulla ac metus odio. Aenean imperdiet pellentesque
-          erat et malesuada. Phasellus at efficitur purus. Fusce non eleifend
-          mauris, eget aliquam enim. Nunc molestie arcu nec elit blandit dictum.
-          Proin eget massa imperdiet, sodales tellus vel, ornare urna. Quisque
-          eu mauris sit amet neque vestibulum pretium et hendrerit tellus. Donec
-          cursus odio non neque euismod, et dictum turpis consectetur.
-          Pellentesque et tellus eu augue sodales aliquam. Suspendisse facilisis
-          congue lectus.
-        </p>
-        <p>
-          Nullam ipsum ipsum, maximus eu lectus eget, malesuada blandit neque.
-          Curabitur scelerisque sed turpis a auctor. Cras posuere fermentum orci
-          a euismod. Cras quis auctor massa, id bibendum mi. In et pellentesque
-          lorem, id cursus metus. Aliquam pretium cursus bibendum. Pellentesque
-          in bibendum sapien. Cras molestie diam in nibh molestie, nec placerat
-          risus ullamcorper. Maecenas feugiat aliquet commodo. Nullam nec
-          lobortis ipsum, vel lacinia nibh. Phasellus ac euismod dui. Nullam eu
-          mattis eros. Sed non placerat tortor, ac dictum mauris. Nunc convallis
-          dignissim blandit. Integer laoreet dictum dui, sit amet posuere lectus
-          commodo sit amet.
+          Experience the freedom of open-source ticketing with Tickflo—where
+          efficiency meets flexibility.
         </p>
       </div>
     </div>
