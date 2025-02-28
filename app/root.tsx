@@ -55,7 +55,7 @@ export default function App() {
             <li>
               <NavLink
                 to="/docs"
-                onClick={(e) => e.currentTarget.blur()}
+                reloadDocument
                 className={({ isActive }) => (isActive ? 'menu-active' : '')}
               >
                 Docs
@@ -64,7 +64,7 @@ export default function App() {
             <li>
               <NavLink
                 to="/about"
-                onClick={(e) => e.currentTarget.blur()}
+                reloadDocument
                 className={({ isActive }) => (isActive ? 'menu-active' : '')}
               >
                 About
@@ -73,7 +73,7 @@ export default function App() {
             <li>
               <NavLink
                 to="/pricing"
-                onClick={(e) => e.currentTarget.blur()}
+                reloadDocument
                 className={({ isActive }) => (isActive ? 'menu-active' : '')}
               >
                 Pricing
@@ -82,7 +82,7 @@ export default function App() {
             <li>
               <NavLink
                 to="/blog"
-                onClick={(e) => e.currentTarget.blur()}
+                reloadDocument
                 className={({ isActive }) => (isActive ? 'menu-active' : '')}
               >
                 Blog
@@ -91,7 +91,7 @@ export default function App() {
             <li>
               <NavLink
                 to="/contact"
-                onClick={(e) => e.currentTarget.blur()}
+                reloadDocument
                 className={({ isActive }) => (isActive ? 'menu-active' : '')}
               >
                 Contact
