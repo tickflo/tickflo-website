@@ -1,10 +1,10 @@
-import { generateMeta } from "@forge42/seo-tools/remix/metadata";
+import { generateMeta } from '@forge42/seo-tools/remix/metadata';
 
 export function meta() {
   return generateMeta({
-    title: "Tickflo - About",
-    description: "Simple, open-source helpdesk software",
-    url: "https://Tickflo.co/about",
+    title: 'Tickflo - About',
+    description: 'Simple, open-source helpdesk software',
+    url: 'https://Tickflo.co/about',
   });
 }
 
@@ -21,13 +21,14 @@ export default function about() {
           managing internal IT requests, or tracking routine tasks, Tickflo
           provides a streamlined and intuitive solution tailored to your needs
         </p>
-        <h2> Our Mission</h2><p>
-        Our mission is simple: to empower teams with a modern, open-source
-        ticketing system that eliminates bottlenecks, improves communication,
-        and enhances workflow automation. We recognize that every organization
-        has unique processes, which is why Tickflo is designed to be fully
-        adaptable—allowing you to configure it to match your exact requirements
-        without vendor lock-in or excessive costs.
+        <h2> Our Mission</h2>
+        <p>
+          Our mission is simple: to empower teams with a modern, open-source
+          ticketing system that eliminates bottlenecks, improves communication,
+          and enhances workflow automation. We recognize that every organization
+          has unique processes, which is why Tickflo is designed to be fully
+          adaptable—allowing you to configure it to match your exact
+          requirements without vendor lock-in or excessive costs.
         </p>
         <h2>Community-Driven Development</h2>
         <p>
