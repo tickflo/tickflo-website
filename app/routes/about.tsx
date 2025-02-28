@@ -4,7 +4,7 @@ export function meta() {
   return generateMeta({
     title: 'Tickflo - About',
     description: 'Simple, open-source helpdesk software',
-    url: 'https://Tickflo.co/about',
+    url: 'https://tickflo.co/about',
   });
 }
 
