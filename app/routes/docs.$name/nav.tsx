@@ -8,7 +8,10 @@ export const DOCS_LINKS = [
     items: [
       { title: 'Welcome', link: '/docs/welcome' },
       { title: 'Overview', link: '/docs/overview' },
-      { title: 'Installation & Deployment', link: '/docs/installation-deployment' },
+      {
+        title: 'Installation & Deployment',
+        link: '/docs/installation-deployment',
+      },
     ],
   },
   {
@@ -37,7 +40,10 @@ export const DOCS_LINKS = [
     hint: 'Stay reliable, compliant, and calm.',
     items: [
       { title: 'Notifications', link: '/docs/notifications' },
-      { title: 'Settings & Configuration', link: '/docs/settings-configuration' },
+      {
+        title: 'Settings & Configuration',
+        link: '/docs/settings-configuration',
+      },
       { title: 'API Documentation', link: '/docs/api-documentation' },
       { title: 'Integrations', link: '/docs/integrations' },
       { title: 'Troubleshooting', link: '/docs/troubleshooting' },
@@ -54,20 +60,27 @@ function Nav() {
 
     return DOCS_LINKS.map((section) => ({
       ...section,
-      items: section.items.filter((item) => item.title.toLowerCase().includes(q)),
+      items: section.items.filter((item) =>
+        item.title.toLowerCase().includes(q),
+      ),
     })).filter((section) => section.items.length > 0);
   }, [query]);
 
-  const totalMatches = filtered.reduce((sum, section) => sum + section.items.length, 0);
+  const _totalMatches = filtered.reduce(
+    (sum, section) => sum + section.items.length,
+    0,
+  );
 
   return (
     <nav className="docs-nav" aria-label="Documentation">
-      <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-4 shadow-inner shadow-black/20 backdrop-blur">
+      <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-4 shadow-black/20 shadow-inner backdrop-blur">
         <div>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-300">Docs</p>
-          <p className="text-sm text-slate-200">Guides & API usage</p>
+          <p className="font-semibold text-[11px] text-slate-300 uppercase tracking-[0.2em]">
+            Docs
+          </p>
+          <p className="text-slate-200 text-sm">Guides & API usage</p>
         </div>
-        <label className="mt-3 flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white shadow-inner shadow-black/10">
+        <label className="mt-3 flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white shadow-black/10 shadow-inner">
           <span className="text-slate-400 text-xs">⌕</span>
           <input
             type="search"
@@ -81,13 +94,18 @@ function Nav() {
 
       <div className="menu menu-sm rounded-2xl border border-white/10 bg-slate-900/50 p-2 shadow-2xl backdrop-blur">
         {filtered.length === 0 ? (
-          <div className="px-3 py-2 text-sm text-slate-400">No matches. Try a different term.</div>
+          <div className="px-3 py-2 text-slate-400 text-sm">
+            No matches. Try a different term.
+          </div>
         ) : (
           filtered.map(({ section, hint, items }) => (
             <div key={section} className="mb-1 rounded-xl">
-              <div className="px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">
+              <div className="px-3 py-2 font-semibold text-[11px] text-slate-400 uppercase tracking-[0.2em]">
                 <span className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-sky-400 shadow-[0_0_0_6px_rgba(56,189,248,0.12)]" aria-hidden />
+                  <span
+                    className="h-2 w-2 rounded-full bg-sky-400 shadow-[0_0_0_6px_rgba(56,189,248,0.12)]"
+                    aria-hidden
+                  />
                   {section}
                 </span>
               </div>
@@ -106,12 +124,14 @@ function Nav() {
                       to={link}
                     >
                       {title}
-                      <span className="text-xs text-slate-400">↗</span>
+                      <span className="text-slate-400 text-xs">↗</span>
                     </RouterNavLink>
                   </li>
                 ))}
               </ul>
-              <p className="px-3 pb-2 pt-1 text-[11px] text-slate-500">{hint}</p>
+              <p className="px-3 pt-1 pb-2 text-[11px] text-slate-500">
+                {hint}
+              </p>
             </div>
           ))
         )}

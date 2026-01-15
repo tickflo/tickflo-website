@@ -166,7 +166,8 @@ Connect with your other tools through REST API, webhooks, and pre-built integrat
 
   'workspace-management': {
     title: 'Workspace Management',
-    description: 'Create, organize, and secure workspaces for teams and clients.',
+    description:
+      'Create, organize, and secure workspaces for teams and clients.',
     markdown: `# Workspace Management
 
 Workspaces keep data isolated by customer, team, or environment. Each workspace has its own users, tickets, contacts, inventory, settings, and audit trail.
@@ -242,7 +243,8 @@ Content-Type: application/json
 
   'team-management': {
     title: 'Team Management',
-    description: 'Organize agents into teams, assign ownership, and control scope.',
+    description:
+      'Organize agents into teams, assign ownership, and control scope.',
     markdown: `# Team Management
 
 Teams group agents so you can assign ownership, route tickets, and scope permissions.
@@ -301,7 +303,8 @@ Content-Type: application/json
 
   'contact-management': {
     title: 'Contact Management',
-    description: 'Manage customers, link them to organizations and locations, and control portal access.',
+    description:
+      'Manage customers, link them to organizations and locations, and control portal access.',
     markdown: `# Contact Management
 
 Contacts represent customers or stakeholders. Link them to organizations and locations, and optionally grant portal access.

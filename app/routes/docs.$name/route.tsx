@@ -26,7 +26,9 @@ export async function loader({ params }: Route.LoaderArgs) {
 
 export default function Component({ loaderData }: Route.ComponentProps) {
   const page = loaderData as any;
-  const description = page.description || 'Learn how to configure and use this feature effectively.';
+  const description =
+    page.description ||
+    'Learn how to configure and use this feature effectively.';
 
   return (
     <div className="docs-shell">
@@ -35,9 +37,15 @@ export default function Component({ loaderData }: Route.ComponentProps) {
         <aside className="docs-nav-card">
           <div className="flex flex-col gap-3 pb-4">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">Tickflo</p>
-              <h2 className="text-2xl font-semibold text-white">Every workflow, mapped</h2>
-              <p className="text-slate-300 text-sm">Curated paths to configure, launch, and grow.</p>
+              <p className="font-semibold text-slate-400 text-xs uppercase tracking-[0.28em]">
+                Tickflo
+              </p>
+              <h2 className="font-semibold text-2xl text-white">
+                Every workflow, mapped
+              </h2>
+              <p className="text-slate-300 text-sm">
+                Curated paths to configure, launch, and grow.
+              </p>
             </div>
           </div>
           <Nav />
@@ -47,9 +55,13 @@ export default function Component({ loaderData }: Route.ComponentProps) {
           <div className="docs-hero">
             <div className="docs-hero-overlay" aria-hidden />
             <div className="space-y-4">
-              <h1 className="text-3xl font-semibold sm:text-4xl text-white">{page.title}</h1>
+              <h1 className="font-semibold text-3xl text-white sm:text-4xl">
+                {page.title}
+              </h1>
               {description && (
-                <p className="max-w-3xl text-base text-slate-200/90 sm:text-lg leading-relaxed">{description}</p>
+                <p className="max-w-3xl text-base text-slate-200/90 leading-relaxed sm:text-lg">
+                  {description}
+                </p>
               )}
             </div>
           </div>
