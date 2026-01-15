@@ -1,6 +1,10 @@
 import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { glob } from 'glob';
 import { parseMarkdown } from './utils/parse-markdown';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 type Content = Awaited<ReturnType<typeof parseMarkdown>>;
 type ContentValue = { content: Content; mtimeMs: number };
@@ -24,12 +28,14 @@ async function getFileContent(
 }
 
 async function loadAllContent(): Promise<ContentStore> {
-  const files = await glob('content/**/*.md');
+  const contentDir = path.join(__dirname, '..', '..', 'content');
+  const files = await glob('**/*.md', { cwd: contentDir });
 
   const contents = await Promise.all(
     files.map(async (filePath) => {
-      const key = filePath.replace(/^content\//, '').replace(/\.md$/, '');
-      const content = await getFileContent(filePath, contentStore?.[key]);
+      const fullPath = path.join(contentDir, filePath);
+      const key = filePath.replace(/\.md$/, '');
+      const content = await getFileContent(fullPath, contentStore?.[key]);
       return [key, content] as const;
     }),
   );

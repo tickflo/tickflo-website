@@ -1,55 +1,121 @@
 import { generateMeta } from '@forge42/seo-tools/remix/metadata';
+import { Link } from 'react-router';
 
 export function meta() {
   return generateMeta({
     title: 'Tickflo - About',
-    description: 'Simple, open-source helpdesk software',
+    description: 'Modern, multi-tenant help desk and ticketing system for teams',
     url: 'https://tickflo.co/about',
   });
 }
 
 export default function about() {
   return (
-    <div className="flex w-full justify-center">
-      <div className="prose">
-        <h2>About us</h2>
-        <p>
-          At Tickflo, we believe that efficient ticket management is the
-          backbone of productivity. That’s why we built an open-source ticketing
-          system that is not only powerful but also flexible, user-friendly, and
-          completely customizable. Whether you're handling customer support,
-          managing internal IT requests, or tracking routine tasks, Tickflo
-          provides a streamlined and intuitive solution tailored to your needs
-        </p>
-        <h2> Our Mission</h2>
-        <p>
-          Our mission is simple: to empower teams with a modern, open-source
-          ticketing system that eliminates bottlenecks, improves communication,
-          and enhances workflow automation. We recognize that every organization
-          has unique processes, which is why Tickflo is designed to be fully
-          adaptable—allowing you to configure it to match your exact
-          requirements without vendor lock-in or excessive costs.
-        </p>
-        <h2>Community-Driven Development</h2>
-        <p>
-          Tickflo is more than just software—it’s a collaborative effort driven
-          by developers, IT professionals, and businesses around the world. As
-          an open-source project, it thrives on contributions, feedback, and
-          shared innovation. Our community works together to ensure Tickflo
-          remains modern, efficient, and secure, providing a reliable solution
-          that evolves with the needs of its users.
-        </p>
-        <h2>Join the Tickflo Community</h2>
-        <p>
-          We’re dedicated to building a better, more accessible support and
-          issue-tracking system—one that puts control back in the hands of its
-          users. Whether you want to contribute code, request new features, or
-          simply find a dependable tool for your team, Tickflo welcomes you.
-        </p>
-        <p>
-          Experience the freedom of open-source ticketing with Tickflo—where
-          efficiency meets flexibility.
-        </p>
+    <div className="space-y-8">
+      <section className="relative overflow-hidden glass-panel p-8 md:p-10">
+        <div className="hero-gradient" />
+        <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div className="space-y-4 max-w-2xl">
+            <div className="flex flex-wrap items-center gap-3 text-sm text-white/70">
+              <span className="pill">About</span>
+              <span className="pill">Built for teams</span>
+              <span className="pill">App parity</span>
+            </div>
+            <h1 className="text-4xl font-bold leading-tight">The helpdesk built to mirror your production app</h1>
+            <p className="text-lg text-white/80">
+              Tickflo keeps the product and marketing experience cohesive: glass panels, gradients, and a navigation model that reflects how real support teams work across workspaces.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link to="/docs" className="btn btn-primary btn-lg rounded-full">Explore docs</Link>
+              <a href="https://github.com/tickflo/tickflo" className="btn btn-outline btn-lg rounded-full border-white/20 bg-white/5 text-slate-100" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </div>
+          <div className="grid w-full max-w-md gap-3">
+            {[{ label: 'Workspaces', value: 'Isolated, role-aware' }, { label: 'Collaboration', value: 'Live SignalR updates' }, { label: 'Deploys', value: 'Docker + Postgres' }, { label: 'Attachments', value: 'S3-compatible' }].map((item) => (
+              <div key={item.label} className="stat-card">
+                <div className="text-xs uppercase tracking-wide text-white/60">{item.label}</div>
+                <div className="text-lg font-semibold text-white">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="grid gap-4 md:grid-cols-[1.15fr_0.85fr]">
+        <div className="glass-panel p-8">
+          <div className="prose prose-invert max-w-none">
+            <h2>What is Tickflo?</h2>
+            <p>
+              Tickflo is a modern, multi-tenant help desk and ticketing system designed for teams
+              that need isolated workspaces, flexible permissions, and real-time collaboration.
+              Built with ASP.NET Core 10.0 and modern web technologies, Tickflo provides
+              a robust platform for managing support tickets, tracking issues, and coordinating
+              team responses.
+            </p>
+
+            <h3>Key Features</h3>
+            <ul>
+              <li><strong>Multi-Tenant Workspaces</strong> - Complete data isolation with separate workspace environments</li>
+              <li><strong>Ticket Management</strong> - Full-featured ticketing with priorities, statuses, types, and assignments</li>
+              <li><strong>Team Collaboration</strong> - Real-time updates via SignalR for instant notifications</li>
+              <li><strong>Role-Based Access Control</strong> - Customizable permissions and roles for fine-grained security</li>
+              <li><strong>Smart Notifications</strong> - Email and in-app notification system</li>
+              <li><strong>File Attachments</strong> - S3-compatible storage powered by RustFS</li>
+              <li><strong>Client Portal</strong> - Secure client-facing portal for ticket submission and tracking</li>
+              <li><strong>Contact &amp; Location Tracking</strong> - Manage contacts, locations, and service inventory</li>
+              <li><strong>Modern UI</strong> - Glass panels, gradients, and responsive design matched to the app</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="glass-panel p-8 space-y-5">
+          <div className="prose prose-invert max-w-none">
+            <h3>Architecture</h3>
+            <p>Tickflo follows clean architecture principles with a clear separation of concerns:</p>
+            <ul>
+              <li><strong>Tickflo.Web</strong> - Razor Pages web application</li>
+              <li><strong>Tickflo.Core</strong> - Business logic and data access layer</li>
+              <li><strong>Tickflo.API</strong> - REST API for integrations</li>
+              <li><strong>PostgreSQL 18.1</strong> - Robust, reliable database</li>
+              <li><strong>Entity Framework Core 9.0</strong> - Modern ORM</li>
+            </ul>
+          </div>
+
+          <div className="prose prose-invert max-w-none">
+            <h3>Technology Stack</h3>
+            <p>Built on proven, enterprise-grade technologies:</p>
+            <ul>
+              <li>ASP.NET Core 10.0</li>
+              <li>PostgreSQL 18.1</li>
+              <li>Entity Framework Core 9.0</li>
+              <li>SignalR for real-time communication</li>
+              <li>Tailwind CSS and DaisyUI for modern UI</li>
+              <li>RustFS for S3-compatible file storage</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div className="glass-panel p-8">
+        <div className="prose prose-invert max-w-none">
+          <h3>Open Source</h3>
+          <p>
+            Tickflo is fully open source and available on{' '}
+            <a href="https://github.com/tickflo/tickflo" target="_blank" rel="noopener noreferrer">GitHub</a>.
+            We welcome contributions from the community and keep product parity between the app and site.
+          </p>
+
+          <h3>Use Cases</h3>
+          <p>Tickflo is perfect for:</p>
+          <ul>
+            <li>IT help desk and support teams</li>
+            <li>Customer service departments</li>
+            <li>Managed service providers (MSPs)</li>
+            <li>Internal IT support</li>
+            <li>Project and task tracking</li>
+            <li>Service delivery management</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

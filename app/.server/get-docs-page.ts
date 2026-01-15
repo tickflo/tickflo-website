@@ -1,7 +1,7 @@
-import { getContentByKey } from './content';
+import { getDocs } from './docs';
 
 async function getDocsPage(slug: string) {
-  return await getContentByKey(`docs/${slug}`);
+  return await getDocs(slug);
 }
 
 export { getDocsPage };
