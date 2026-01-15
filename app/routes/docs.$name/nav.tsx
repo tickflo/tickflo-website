@@ -63,12 +63,9 @@ function Nav() {
   return (
     <nav className="docs-nav" aria-label="Documentation">
       <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-4 shadow-inner shadow-black/20 backdrop-blur">
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-300">Docs</p>
-            <p className="text-sm text-slate-200">Guides & API usage</p>
-          </div>
-          <span className="badge badge-sm badge-primary">Live</span>
+        <div>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-300">Docs</p>
+          <p className="text-sm text-slate-200">Guides & API usage</p>
         </div>
         <label className="mt-3 flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-white shadow-inner shadow-black/10">
           <span className="text-slate-400 text-xs">⌕</span>
@@ -79,9 +76,6 @@ function Nav() {
             placeholder="Search docs and API"
             className="h-8 w-full bg-transparent text-sm text-white placeholder:text-slate-500 focus:outline-none"
           />
-          <span className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-200/80">
-            {totalMatches}
-          </span>
         </label>
       </div>
 
@@ -91,12 +85,11 @@ function Nav() {
         ) : (
           filtered.map(({ section, hint, items }) => (
             <div key={section} className="mb-1 rounded-xl">
-              <div className="flex items-center justify-between px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">
+              <div className="px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">
                 <span className="flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-sky-400 shadow-[0_0_0_6px_rgba(56,189,248,0.12)]" aria-hidden />
                   {section}
                 </span>
-                <span className="badge badge-ghost badge-xs text-[10px] text-slate-300">{items.length}</span>
               </div>
               <ul className="space-y-1">
                 {items.map(({ title, link }) => (
@@ -112,10 +105,7 @@ function Nav() {
                       }
                       to={link}
                     >
-                      <span className="flex items-center gap-2">
-                        <span className="kbd kbd-xs bg-white/5 text-[10px] uppercase text-slate-200">Go</span>
-                        {title}
-                      </span>
+                      {title}
                       <span className="text-xs text-slate-400">↗</span>
                     </RouterNavLink>
                   </li>

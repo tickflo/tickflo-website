@@ -37,7 +37,7 @@ export default function App() {
   return (
     <>
       <div className="relative">
-        <nav className="navbar glass-panel sticky top-4 z-40 mx-auto mt-4 max-w-6xl px-4">
+        <nav className="navbar glass-panel sticky top-4 z-40 mx-auto max-w-6xl px-4">
           <div className="flex-1">
             <Link to="/" className="flex items-center gap-3 text-lg font-semibold">
               <img

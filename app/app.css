@@ -159,3 +159,23 @@
 .prose :where(a) {
   @apply text-primary font-semibold no-underline hover:text-primary/80;
 }
+
+.prose.prose-invert {
+  @apply text-slate-200;
+}
+
+.prose.prose-invert :where(h2, h3, h4) {
+  @apply text-white;
+}
+
+.prose.prose-invert :where(p) {
+  @apply text-slate-200;
+}
+
+.prose.prose-invert :where(li) {
+  @apply text-slate-200;
+}
+
+.prose.prose-invert :where(strong) {
+  @apply text-white;
+}
