@@ -24,7 +24,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="relative min-h-screen">
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -36,126 +36,144 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <>
-      <nav className="navbar justify-between bg-base-100 shadow-sm">
-        <Link to="/" className="btn btn-ghost text-lg">
-          Tickflo
-        </Link>
-
-        <div className="dropdown dropdown-end sm:hidden">
-          {/* biome-ignore lint/a11y/useSemanticElements: fix mobile menu */}
-          <div tabIndex={0} role="button" className="btn btn-ghost">
-            <FaBars />
+      <div className="relative">
+        <nav className="navbar glass-panel sticky top-4 z-40 mx-auto mt-4 max-w-6xl px-4">
+          <div className="flex-1">
+            <Link to="/" className="flex items-center gap-3 text-lg font-semibold">
+              <img
+                src="https://app.tickflo.co/img/logo.png"
+                alt="Tickflo logo"
+                className="h-8 w-auto"
+              />
+            </Link>
           </div>
 
-          <ul
-            // biome-ignore lint/a11y/noNoninteractiveTabindex: fix mobile menu
-            tabIndex={0}
-            className="dropdown-content menu z-[1] w-56 gap-2 rounded-box bg-base-200 p-6 shadow"
-          >
-            <li>
-              <NavLink
-                to="/docs"
-                reloadDocument
-                className={({ isActive }) => (isActive ? 'menu-active' : '')}
-              >
-                Docs
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/about"
-                reloadDocument
-                className={({ isActive }) => (isActive ? 'menu-active' : '')}
-              >
-                About
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/pricing"
-                reloadDocument
-                className={({ isActive }) => (isActive ? 'menu-active' : '')}
-              >
-                Pricing
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/blog"
-                reloadDocument
-                className={({ isActive }) => (isActive ? 'menu-active' : '')}
-              >
-                Blog
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/contact"
-                reloadDocument
-                className={({ isActive }) => (isActive ? 'menu-active' : '')}
-              >
-                Contact
-              </NavLink>
-            </li>
-            <a
-              className="btn btn-sm btn-primary"
-              href="https://app.tickflo.co/login"
-            >
-              Log in
-            </a>
-          </ul>
-        </div>
+          <div className="dropdown dropdown-end sm:hidden">
+            {/* biome-ignore lint/a11y/useSemanticElements: fix mobile menu */}
+            <div tabIndex={0} role="button" className="btn btn-ghost">
+              <FaBars />
+            </div>
 
-        <ul className="menu sm:menu-horizontal hidden gap-2">
-          <li>
+            <ul
+              // biome-ignore lint/a11y/noNoninteractiveTabindex: fix mobile menu
+              tabIndex={0}
+              className="dropdown-content menu z-[1] w-64 gap-3 rounded-2xl border border-white/10 bg-slate-900/90 p-6 shadow-2xl backdrop-blur"
+            >
+              <li>
+                <NavLink
+                  to="/docs"
+                  reloadDocument
+                  className={({ isActive }) =>
+                    `rounded-xl px-3 py-2 ${isActive ? 'bg-white/10 text-white' : 'hover:bg-white/5'}`
+                  }
+                >
+                  Docs
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/about"
+                  reloadDocument
+                  className={({ isActive }) =>
+                    `rounded-xl px-3 py-2 ${isActive ? 'bg-white/10 text-white' : 'hover:bg-white/5'}`
+                  }
+                >
+                  About
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/pricing"
+                  reloadDocument
+                  className={({ isActive }) =>
+                    `rounded-xl px-3 py-2 ${isActive ? 'bg-white/10 text-white' : 'hover:bg-white/5'}`
+                  }
+                >
+                  Pricing
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/blog"
+                  reloadDocument
+                  className={({ isActive }) =>
+                    `rounded-xl px-3 py-2 ${isActive ? 'bg-white/10 text-white' : 'hover:bg-white/5'}`
+                  }
+                >
+                  Blog
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/contact"
+                  reloadDocument
+                  className={({ isActive }) =>
+                    `rounded-xl px-3 py-2 ${isActive ? 'bg-white/10 text-white' : 'hover:bg-white/5'}`
+                  }
+                >
+                  Contact
+                </NavLink>
+              </li>
+              <a
+                className="btn btn-primary"
+                href="https://app.tickflo.co/login"
+              >
+                Open the app
+              </a>
+            </ul>
+          </div>
+
+          <div className="hidden items-center gap-2 sm:flex">
             <NavLink
               to="/docs"
-              className={({ isActive }) => (isActive ? 'menu-active' : '')}
+              className={({ isActive }) =>
+                `btn btn-ghost btn-sm rounded-full ${isActive ? 'bg-white/10 text-white' : 'text-slate-200 hover:bg-white/5'}`
+              }
             >
               Docs
             </NavLink>
-          </li>
-          <li>
             <NavLink
               to="/about"
-              className={({ isActive }) => (isActive ? 'menu-active' : '')}
+              className={({ isActive }) =>
+                `btn btn-ghost btn-sm rounded-full ${isActive ? 'bg-white/10 text-white' : 'text-slate-200 hover:bg-white/5'}`
+              }
             >
               About
             </NavLink>
-          </li>
-          <li>
             <NavLink
               to="/pricing"
-              className={({ isActive }) => (isActive ? 'menu-active' : '')}
+              className={({ isActive }) =>
+                `btn btn-ghost btn-sm rounded-full ${isActive ? 'bg-white/10 text-white' : 'text-slate-200 hover:bg-white/5'}`
+              }
             >
               Pricing
             </NavLink>
-          </li>
-          <li>
             <NavLink
               to="/blog"
-              className={({ isActive }) => (isActive ? 'menu-active' : '')}
+              className={({ isActive }) =>
+                `btn btn-ghost btn-sm rounded-full ${isActive ? 'bg-white/10 text-white' : 'text-slate-200 hover:bg-white/5'}`
+              }
             >
               Blog
             </NavLink>
-          </li>
-          <li>
             <NavLink
               to="/contact"
-              className={({ isActive }) => (isActive ? 'menu-active' : '')}
+              className={({ isActive }) =>
+                `btn btn-ghost btn-sm rounded-full ${isActive ? 'bg-white/10 text-white' : 'text-slate-200 hover:bg-white/5'}`
+              }
             >
               Contact
             </NavLink>
-          </li>
-          <a
-            className="btn btn-sm btn-primary"
-            href="https://app.tickflo.co/login"
-          >
-            Log in
-          </a>
-        </ul>
-      </nav>
-      <main className="p-4">
+            <a
+              className="btn btn-primary btn-sm rounded-full"
+              href="https://app.tickflo.co/login"
+            >
+              Open the app
+            </a>
+          </div>
+        </nav>
+      </div>
+      <main className="mx-auto max-w-6xl px-4 pb-16 pt-8">
         <Outlet />
       </main>
     </>

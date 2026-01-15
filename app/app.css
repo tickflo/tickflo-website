@@ -4,3 +4,158 @@
   /* biome-ignore lint/correctness/noUnknownProperty: <explanation> */
   themes: light --default, dark --prefersdark;
 }
+
+@layer base {
+  body {
+    @apply min-h-screen bg-slate-950 text-slate-100 antialiased;
+    background:
+      radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.05), transparent 32%),
+      radial-gradient(circle at 82% 8%, rgba(255, 255, 255, 0.04), transparent 30%),
+      radial-gradient(circle at 50% 85%, rgba(37, 99, 235, 0.08), transparent 32%),
+      linear-gradient(135deg, #0c1220 0%, #0b101b 42%, #0a0f18 100%);
+  }
+
+  a {
+    @apply transition-colors;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-3xl border border-white/10 bg-white/5 backdrop-blur shadow-2xl;
+  }
+
+  /* cleaned unused quick-link and accordion styles */
+
+  .docs-shell {
+    position: relative;
+    overflow: visible;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(10, 14, 24, 0.9);
+    padding: 1rem;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  }
+
+  @media (min-width: 640px) {
+    .docs-shell {
+      padding: 1.5rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .docs-shell {
+      padding: 2rem;
+    }
+  }
+
+  .docs-shell-glow {
+    position: absolute;
+    inset: -20%;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(79, 155, 255, 0.16), transparent 35%),
+      radial-gradient(circle at 78% 18%, rgba(59, 130, 246, 0.18), transparent 32%),
+      radial-gradient(circle at 46% 78%, rgba(14, 165, 233, 0.16), transparent 32%);
+    filter: blur(70px);
+    opacity: 0.55;
+    pointer-events: none;
+  }
+
+  .docs-grid {
+    position: relative;
+    display: grid;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  @media (min-width: 960px) {
+    .docs-grid {
+      grid-template-columns: minmax(240px, 280px) minmax(0, 1fr);
+    }
+  }
+
+  .docs-nav-card {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+    height: fit-content;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+  }
+
+  @media (min-width: 640px) {
+    .docs-nav-card {
+      padding: 1.25rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .docs-nav-card {
+      padding: 1.5rem;
+    }
+  }
+
+  .docs-nav {
+    @apply space-y-6;
+  }
+
+  .docs-nav-link {
+    @apply flex items-center justify-between rounded-xl border px-4 py-3 text-sm font-semibold tracking-tight transition-all duration-200;
+  }
+
+  .docs-nav-link-idle {
+    @apply border-white/5 bg-white/0 text-slate-200/80 hover:-translate-y-[1px] hover:border-white/10 hover:bg-white/5 hover:text-white;
+  }
+
+  .docs-nav-link-active {
+    @apply border-white/15 bg-white/10 text-white shadow-lg shadow-white/10 ring-1 ring-white/10;
+  }
+
+  .docs-hero {
+    @apply relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-950/85 via-slate-900/65 to-slate-950/85 p-6 sm:p-7 md:p-8 shadow-2xl backdrop-blur;
+  }
+
+  .docs-hero-overlay {
+    position: absolute;
+    inset: -30%;
+    background:
+      radial-gradient(circle at 22% 24%, rgba(79, 155, 255, 0.28), transparent 32%),
+      radial-gradient(circle at 68% 28%, rgba(37, 99, 235, 0.25), transparent 34%),
+      radial-gradient(circle at 60% 78%, rgba(14, 165, 233, 0.22), transparent 32%);
+    filter: blur(80px);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .docs-article {
+    @apply rounded-3xl border border-white/10 bg-slate-950/75 p-4 sm:p-6 md:p-8 shadow-2xl backdrop-blur;
+  }
+
+  .docs-prose {
+    @apply prose-lg prose-invert max-w-none text-slate-100 prose-headings:text-white prose-a:text-sky-300 prose-strong:text-white prose-code:text-amber-200 prose-li:marker:text-sky-300;
+  }
+
+  .docs-prose pre {
+    @apply rounded-2xl border border-white/5 bg-slate-900/80 p-4 text-sm shadow-inner shadow-black/20;
+  }
+
+  .docs-prose code {
+    @apply rounded-lg bg-white/10 px-1.5 py-0.5 text-[0.95em];
+  }
+
+  .docs-prose blockquote {
+    @apply border-l-4 border-sky-400/40 bg-slate-900/60 text-slate-100 shadow-inner shadow-black/10;
+  }
+
+  .docs-prose hr {
+    @apply border-white/10;
+  }
+}
+
+.prose :where(a) {
+  @apply text-primary font-semibold no-underline hover:text-primary/80;
+}

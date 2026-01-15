@@ -1,81 +1,119 @@
 import { generateMeta } from '@forge42/seo-tools/remix/metadata';
+import { Link } from 'react-router';
 
 export function meta() {
   return generateMeta({
     title: 'Tickflo - Pricing',
-    description: 'Simple, open-source helpdesk software',
+    description: 'Open-source ticketing system - free to use and self-host',
     url: 'https://tickflo.co/pricing',
   });
 }
 
 export default function pricing() {
   return (
-    <div className="flex w-full justify-center">
-      <div className="prose">
-        <h2>Pricing</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi varius,
-          nibh at interdum blandit, leo est sodales ligula, ac tincidunt enim
-          erat id massa. Phasellus aliquam tellus felis, sit amet commodo ligula
-          laoreet sed. Sed sed vulputate nibh. Sed non velit dapibus, placerat
-          nulla vel, vulputate erat. In consectetur enim nec eleifend sagittis.
-          Etiam ante dui, egestas a urna sit amet, rhoncus condimentum dui.
-          Curabitur vulputate ante risus, id hendrerit felis suscipit sit amet.
-          Proin ipsum turpis, molestie quis nulla sit amet, lobortis suscipit
-          neque. Quisque ex felis, varius sit amet ante sit amet, consequat
-          volutpat nunc. Vivamus molestie viverra felis, non interdum leo
-          tincidunt quis.
-        </p>
-        <p>
-          Vivamus in urna imperdiet, tincidunt leo aliquam, consectetur mi.
-          Proin tincidunt, erat nec gravida sollicitudin, augue lacus convallis
-          ex, eu fermentum velit mauris quis magna. Quisque lobortis augue eu
-          vehicula scelerisque. Ut congue quis lectus id iaculis. Praesent vitae
-          malesuada libero, sit amet aliquam purus. Vestibulum aliquet nulla non
-          purus accumsan, at lobortis ipsum condimentum. Duis cursus ligula
-          tortor, a fermentum justo tristique eu. Cras purus elit, volutpat in
-          nulla id, placerat efficitur sapien. Curabitur ut velit quis nulla
-          pharetra maximus. Donec elit nulla, maximus sed orci dignissim,
-          dignissim lacinia mi. Pellentesque vitae eleifend nunc. Phasellus
-          sollicitudin semper eros id maximus. Aliquam tincidunt, nulla et
-          ornare rutrum, ante est finibus lacus, at facilisis sapien massa ac
-          leo. Aenean sed est et ante vestibulum accumsan ut a urna. Aenean at
-          urna id risus tristique hendrerit sed ut diam.
-        </p>
-        <p>
-          Mauris a scelerisque tortor. Donec id quam ac eros pulvinar cursus
-          bibendum et nisi. Nulla vel fermentum ante. Quisque maximus vulputate
-          risus quis sodales. Maecenas lobortis mi eu bibendum condimentum. Sed
-          condimentum dapibus odio. Phasellus vestibulum dignissim lobortis.
-          Nullam turpis quam, condimentum aliquet malesuada quis, porttitor eget
-          lectus. Fusce tincidunt est id quam venenatis maximus.
-        </p>
-        <p>
-          Integer ornare dolor eu quam fermentum, quis aliquam sapien lacinia.
-          Suspendisse justo lorem, luctus eu magna et, pulvinar aliquam arcu.
-          Sed interdum metus nec ultricies bibendum. Morbi vitae neque ac orci
-          varius feugiat. Aliquam erat volutpat. Quisque sollicitudin placerat
-          est eget molestie. Nulla ac metus odio. Aenean imperdiet pellentesque
-          erat et malesuada. Phasellus at efficitur purus. Fusce non eleifend
-          mauris, eget aliquam enim. Nunc molestie arcu nec elit blandit dictum.
-          Proin eget massa imperdiet, sodales tellus vel, ornare urna. Quisque
-          eu mauris sit amet neque vestibulum pretium et hendrerit tellus. Donec
-          cursus odio non neque euismod, et dictum turpis consectetur.
-          Pellentesque et tellus eu augue sodales aliquam. Suspendisse facilisis
-          congue lectus.
-        </p>
-        <p>
-          Nullam ipsum ipsum, maximus eu lectus eget, malesuada blandit neque.
-          Curabitur scelerisque sed turpis a auctor. Cras posuere fermentum orci
-          a euismod. Cras quis auctor massa, id bibendum mi. In et pellentesque
-          lorem, id cursus metus. Aliquam pretium cursus bibendum. Pellentesque
-          in bibendum sapien. Cras molestie diam in nibh molestie, nec placerat
-          risus ullamcorper. Maecenas feugiat aliquet commodo. Nullam nec
-          lobortis ipsum, vel lacinia nibh. Phasellus ac euismod dui. Nullam eu
-          mattis eros. Sed non placerat tortor, ac dictum mauris. Nunc convallis
-          dignissim blandit. Integer laoreet dictum dui, sit amet posuere lectus
-          commodo sit amet.
-        </p>
+    <div className="space-y-8">
+      <section className="relative overflow-hidden glass-panel p-8 md:p-10">
+        <div className="hero-gradient" />
+        <div className="relative grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center">
+          <div className="space-y-4">
+            <div className="flex flex-wrap items-center gap-3 text-sm text-white/70">
+              <span className="pill">Pricing</span>
+              <span className="pill">Free forever</span>
+              <span className="pill">Self-host</span>
+            </div>
+            <h1 className="text-4xl font-bold leading-tight">Tickflo is open source and free — no seat limits</h1>
+            <p className="text-lg text-white/80">
+              Ship a production-grade help desk without per-user surprises. Self-host, extend, and keep your data isolated by design.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link to="/docs" className="btn btn-primary btn-lg rounded-full">Read the docs</Link>
+              <a href="https://github.com/tickflo/tickflo" className="btn btn-outline btn-lg rounded-full border-white/20 bg-white/5 text-slate-100" target="_blank" rel="noopener noreferrer">Star on GitHub</a>
+            </div>
+          </div>
+
+          <div className="grid gap-3">
+            {[{ label: 'License', value: 'OSS • MIT' }, { label: 'Workspaces', value: 'Unlimited' }, { label: 'Users', value: 'Unlimited' }, { label: 'Storage', value: 'S3-compatible' }].map((item) => (
+              <div key={item.label} className="stat-card">
+                <div className="text-xs uppercase tracking-wide text-white/60">{item.label}</div>
+                <div className="text-lg font-semibold text-white">{item.value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="grid gap-4 md:grid-cols-[1.1fr_0.9fr]">
+        <div className="glass-panel p-8">
+          <div className="prose prose-invert max-w-none">
+            <h2>Open Source Licensing</h2>
+            <p>Tickflo is released as open-source software, meaning you can:</p>
+            <ul>
+              <li>Download and use it for free</li>
+              <li>Self-host on your own infrastructure</li>
+              <li>Modify the code to suit your needs</li>
+              <li>Contribute improvements back to the community</li>
+            </ul>
+
+            <h2>Self-Hosting</h2>
+            <p>Tickflo is designed to be easy to self-host. You'll need:</p>
+            <ul>
+              <li><strong>.NET 10.0 SDK</strong> - Runtime for the application</li>
+              <li><strong>PostgreSQL 18.1+</strong> - Database server</li>
+              <li><strong>Docker</strong> (optional) - For containerized deployment</li>
+              <li><strong>S3-compatible storage</strong> - For file attachments (RustFS or AWS S3)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="glass-panel p-8 space-y-5">
+          <div className="prose prose-invert max-w-none">
+            <h3>Estimated Infrastructure Costs</h3>
+            <p>When self-hosting, your main costs will be infrastructure:</p>
+            <ul>
+              <li><strong>Small team (1-10 users)</strong>: $10-20/month for a VPS</li>
+              <li><strong>Medium team (10-50 users)</strong>: $50-100/month for dedicated resources</li>
+              <li><strong>Large team (50+ users)</strong>: $200+/month depending on scale</li>
+            </ul>
+          </div>
+
+          <div className="prose prose-invert max-w-none">
+            <h3>Quick Start</h3>
+            <p>Get started with Tickflo in minutes:</p>
+            <div className="mockup-code">
+              <pre data-prefix="$"><code>git clone https://github.com/tickflo/tickflo.git</code></pre>
+              <pre data-prefix="$"><code>cd tickflo</code></pre>
+              <pre data-prefix="$"><code>docker compose up -d</code></pre>
+              <pre data-prefix="$"><code>dbmate up</code></pre>
+              <pre data-prefix="$"><code>dotnet run --project Tickflo.Web</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="glass-panel p-8">
+        <div className="prose prose-invert max-w-none">
+          <h3>Support</h3>
+          <p>While Tickflo is free to use, you can get support through:</p>
+          <ul>
+            <li><strong>Documentation</strong> - Comprehensive guides and API references</li>
+            <li><strong>GitHub Issues</strong> - Report bugs and request features</li>
+            <li><strong>Community</strong> - Connect with other users and contributors</li>
+          </ul>
+
+          <h3>Contributing</h3>
+          <p>Help make Tickflo better! We welcome contributions of all kinds:</p>
+          <ul>
+            <li>Bug reports and feature requests</li>
+            <li>Code contributions and pull requests</li>
+            <li>Documentation improvements</li>
+            <li>Translation and localization</li>
+          </ul>
+          <p>
+            Visit our{' '}
+            <a href="https://github.com/tickflo/tickflo" target="_blank" rel="noopener noreferrer">GitHub repository</a>
+            {' '}to get started.
+          </p>
+        </div>
       </div>
     </div>
   );
