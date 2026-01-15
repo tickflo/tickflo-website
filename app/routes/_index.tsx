@@ -19,7 +19,7 @@ export function meta() {
 export default function index() {
   return (
     <div className="space-y-10">
-      <section className="relative overflow-hidden glass-panel px-6 py-10 md:px-12">
+      <section className="glass-panel relative overflow-hidden px-6 py-10 md:px-12">
         <div className="hero-gradient" />
         <div className="relative grid items-center gap-10 md:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-6">
@@ -29,16 +29,22 @@ export default function index() {
               <span className="pill">Self-hosted</span>
             </div>
 
-            <h1 className="text-4xl font-bold leading-tight md:text-5xl">
+            <h1 className="font-bold text-4xl leading-tight md:text-5xl">
               Modern help desk and ticketing for teams that need control
             </h1>
 
             <p className="text-lg text-slate-200/90">
-              Tickflo is a complete ticketing system built for multi-tenant operations. Isolate workspaces, manage permissions, automate workflows, and collaborate in real-time—all on infrastructure you own.
+              Tickflo is a complete ticketing system built for multi-tenant
+              operations. Isolate workspaces, manage permissions, automate
+              workflows, and collaborate in real-time—all on infrastructure you
+              own.
             </p>
 
             <div className="flex flex-wrap gap-3">
-              <Link to="/docs" className="btn btn-primary btn-lg rounded-full gap-2">
+              <Link
+                to="/docs"
+                className="btn btn-primary btn-lg gap-2 rounded-full"
+              >
                 Get started
                 <FaArrowRight />
               </Link>
@@ -59,12 +65,18 @@ export default function index() {
             </div>
 
             <div className="grid gap-3 sm:grid-cols-3">
-              {[{ label: 'Architecture', value: '.NET 10 + PostgreSQL' }, { label: 'Real-time', value: 'SignalR + webhooks' }, { label: 'Isolation', value: 'Multi-tenant workspaces' }].map((item) => (
+              {[
+                { label: 'Architecture', value: '.NET 10 + PostgreSQL' },
+                { label: 'Real-time', value: 'SignalR + webhooks' },
+                { label: 'Isolation', value: 'Multi-tenant workspaces' },
+              ].map((item) => (
                 <div key={item.label} className="stat-card">
-                  <div className="text-xs uppercase tracking-wide text-white/60">
+                  <div className="text-white/60 text-xs uppercase tracking-wide">
                     {item.label}
                   </div>
-                  <div className="text-lg font-semibold text-white">{item.value}</div>
+                  <div className="font-semibold text-lg text-white">
+                    {item.value}
+                  </div>
                 </div>
               ))}
             </div>
@@ -74,29 +86,67 @@ export default function index() {
             <span className="glow-ring -left-10 -top-10 h-40 w-40" />
             <span className="glow-ring -right-8 bottom-12 h-32 w-32" />
             <div className="glass-panel border-white/15 bg-neutral-900/70 p-6 shadow-2xl">
-              <div className="flex items-center justify-between border-b border-white/10 pb-4">
+              <div className="flex items-center justify-between border-white/10 border-b pb-4">
                 <div>
-                  <p className="text-xs uppercase tracking-wide text-white/60">Workspace</p>
-                  <h3 className="text-xl font-semibold">Ticket Dashboard</h3>
+                  <p className="text-white/60 text-xs uppercase tracking-wide">
+                    Workspace
+                  </p>
+                  <h3 className="font-semibold text-xl">Ticket Dashboard</h3>
                 </div>
-                <span className="badge badge-outline badge-sm rounded-full">Live</span>
+                <span className="badge badge-outline badge-sm rounded-full">
+                  Live
+                </span>
               </div>
 
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 {[
-                  { title: 'Open Tickets', value: '124', badge: 'badge-primary', bar: 'bg-primary', width: '58%' },
-                  { title: 'Resolved', value: '312', badge: 'badge-success', bar: 'bg-success', width: '72%' },
-                  { title: 'Avg. Response', value: '2m', badge: 'badge-info', bar: 'bg-info', width: '42%' },
-                  { title: 'SLA Risk', value: '3', badge: 'badge-warning', bar: 'bg-warning', width: '30%' },
+                  {
+                    title: 'Open Tickets',
+                    value: '124',
+                    badge: 'badge-primary',
+                    bar: 'bg-primary',
+                    width: '58%',
+                  },
+                  {
+                    title: 'Resolved',
+                    value: '312',
+                    badge: 'badge-success',
+                    bar: 'bg-success',
+                    width: '72%',
+                  },
+                  {
+                    title: 'Avg. Response',
+                    value: '2m',
+                    badge: 'badge-info',
+                    bar: 'bg-info',
+                    width: '42%',
+                  },
+                  {
+                    title: 'SLA Risk',
+                    value: '3',
+                    badge: 'badge-warning',
+                    bar: 'bg-warning',
+                    width: '30%',
+                  },
                 ].map((card) => (
-                  <div key={card.title} className="glass-panel border-white/10 bg-neutral-900/80 p-4">
+                  <div
+                    key={card.title}
+                    className="glass-panel border-white/10 bg-neutral-900/80 p-4"
+                  >
                     <div className="flex items-center justify-between text-sm text-white/70">
                       <span>{card.title}</span>
-                      <span className={`${card.badge} badge-soft badge-sm rounded-full`}>Now</span>
+                      <span
+                        className={`${card.badge} badge-soft badge-sm rounded-full`}
+                      >
+                        Now
+                      </span>
                     </div>
-                    <div className="mt-2 text-2xl font-bold">{card.value}</div>
+                    <div className="mt-2 font-bold text-2xl">{card.value}</div>
                     <div className="mt-1 h-1.5 rounded-full bg-white/10">
-                      <span className={`block h-1.5 rounded-full ${card.bar}`} style={{ width: card.width }} />
+                      <span
+                        className={`block h-1.5 rounded-full ${card.bar}`}
+                        style={{ width: card.width }}
+                      />
                     </div>
                   </div>
                 ))}
@@ -105,20 +155,45 @@ export default function index() {
               <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 p-4">
                 <div className="flex items-center justify-between text-sm text-white/70">
                   <span className="font-semibold text-white">Active queue</span>
-                  <span className="badge badge-primary badge-sm rounded-full">6 waiting</span>
+                  <span className="badge badge-primary badge-sm rounded-full">
+                    6 waiting
+                  </span>
                 </div>
                 <div className="mt-4 space-y-3">
                   {[
-                    { title: 'VPN outage in region-2', tag: 'P1', badge: 'badge-error' },
-                    { title: 'New onboarding automation', tag: 'Task', badge: 'badge-info' },
-                    { title: 'Customer portal file uploads', tag: 'Bug', badge: 'badge-warning' },
+                    {
+                      title: 'VPN outage in region-2',
+                      tag: 'P1',
+                      badge: 'badge-error',
+                    },
+                    {
+                      title: 'New onboarding automation',
+                      tag: 'Task',
+                      badge: 'badge-info',
+                    },
+                    {
+                      title: 'Customer portal file uploads',
+                      tag: 'Bug',
+                      badge: 'badge-warning',
+                    },
                   ].map((ticket) => (
-                    <div key={ticket.title} className="flex items-center justify-between rounded-xl border border-white/5 bg-neutral-900/70 px-3 py-2">
+                    <div
+                      key={ticket.title}
+                      className="flex items-center justify-between rounded-xl border border-white/5 bg-neutral-900/70 px-3 py-2"
+                    >
                       <div>
-                        <div className="text-sm font-semibold text-white">{ticket.title}</div>
-                        <div className="text-xs text-white/60">Workspace · Assigned</div>
+                        <div className="font-semibold text-sm text-white">
+                          {ticket.title}
+                        </div>
+                        <div className="text-white/60 text-xs">
+                          Workspace · Assigned
+                        </div>
                       </div>
-                      <span className={`${ticket.badge} badge-soft rounded-full`}>{ticket.tag}</span>
+                      <span
+                        className={`${ticket.badge} badge-soft rounded-full`}
+                      >
+                        {ticket.tag}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -147,8 +222,10 @@ export default function index() {
           },
         ].map((feature) => (
           <div key={feature.title} className="stat-card">
-            <div className="flex items-center gap-3 text-lg font-semibold">
-              <span className="rounded-2xl bg-white/10 p-2">{feature.icon}</span>
+            <div className="flex items-center gap-3 font-semibold text-lg">
+              <span className="rounded-2xl bg-white/10 p-2">
+                {feature.icon}
+              </span>
               <span>{feature.title}</span>
             </div>
             <p className="mt-2 text-sm text-white/70">{feature.text}</p>
@@ -158,20 +235,24 @@ export default function index() {
 
       <section className="grid items-start gap-4 md:grid-cols-2">
         <div className="stat-card">
-          <h3 className="text-xl font-semibold">Core features</h3>
+          <h3 className="font-semibold text-xl">Core features</h3>
           <p className="mt-2 text-white/70">
-            Everything you need to run a professional help desk right out of the box.
+            Everything you need to run a professional help desk right out of the
+            box.
           </p>
           <div className="mt-4 space-y-3">
-            {[ 
-              'Multi-tenant workspaces with full data isolation', 
-              'Ticket management with priorities, statuses, and types', 
+            {[
+              'Multi-tenant workspaces with full data isolation',
+              'Ticket management with priorities, statuses, and types',
               'Team collaboration and assignment workflows',
               'Contact and location management',
               'Client portal for self-service',
               'Email notifications and integrations',
             ].map((item) => (
-              <div key={item} className="flex items-start gap-2 text-sm text-white/80">
+              <div
+                key={item}
+                className="flex items-start gap-2 text-sm text-white/80"
+              >
                 <FaCheckCircle className="mt-0.5 text-success" />
                 <span>{item}</span>
               </div>
@@ -180,7 +261,7 @@ export default function index() {
         </div>
 
         <div className="stat-card">
-          <h3 className="text-xl font-semibold">Built on proven technology</h3>
+          <h3 className="font-semibold text-xl">Built on proven technology</h3>
           <div className="mt-4 grid gap-3">
             {[
               {
@@ -200,9 +281,14 @@ export default function index() {
                 copy: 'Scalable file attachment handling with RustFS or any S3-compatible provider.',
               },
             ].map((item) => (
-              <div key={item.title} className="rounded-2xl border border-white/10 bg-white/5 p-3">
-                <div className="text-sm font-semibold text-white">{item.title}</div>
-                <div className="text-xs text-white/70">{item.copy}</div>
+              <div
+                key={item.title}
+                className="rounded-2xl border border-white/10 bg-white/5 p-3"
+              >
+                <div className="font-semibold text-sm text-white">
+                  {item.title}
+                </div>
+                <div className="text-white/70 text-xs">{item.copy}</div>
               </div>
             ))}
           </div>

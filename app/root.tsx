@@ -37,9 +37,12 @@ export default function App() {
   return (
     <>
       <div className="relative">
-        <nav className="navbar glass-panel sticky top-4 z-40 mx-auto mt-4 max-w-6xl px-4">
+        <nav className="navbar glass-panel sticky top-4 z-40 mx-auto max-w-6xl px-4">
           <div className="flex-1">
-            <Link to="/" className="flex items-center gap-3 text-lg font-semibold">
+            <Link
+              to="/"
+              className="flex items-center gap-3 font-semibold text-lg"
+            >
               <img
                 src="https://app.tickflo.co/img/logo.png"
                 alt="Tickflo logo"
@@ -173,7 +176,7 @@ export default function App() {
           </div>
         </nav>
       </div>
-      <main className="mx-auto max-w-6xl px-4 pb-16 pt-8">
+      <main className="mx-auto max-w-6xl px-4 pt-8 pb-16">
         <Outlet />
       </main>
     </>
